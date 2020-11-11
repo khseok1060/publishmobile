@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/baseStyle.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
+</head>
+<body>
+    <script type="text/javascript" src="./JS/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./JS/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./JS/slick.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* slider_1 Arrows */
+        .slider_1 .slick-prev,
+        .slider_1 .slick-next
+        {
+            font-size: 0;
+            line-height: 0;
+
+            position: absolute;
+            top: 110%;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            -webkit-transform: translate(0, -110%);
+            -ms-transform: translate(0, -110%);
+            transform: translate(0, -110%);
+
+            cursor: pointer;
+
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        .slider_1 .slick-prev:hover,
+        .slider_1 .slick-prev:focus,
+        .slider_1 .slick-next:hover,
+        .slider_1 .slick-next:focus
+        {
+            color: transparent;
+            outline: none;
+            background: transparent;
+        }
+        .slider_1 .slick-prev:hover:before,
+        .slider_1 .slick-prev:focus:before,
+        .slider_1 .slick-next:hover:before,
+        .slider_1 .slick-next:focus:before
+        {
+            opacity: 1;
+        }
+        .slider_1 .slick-prev.slick-disabled:before,
+        .slider_1 .slick-next.slick-disabled:before
+        {
+            opacity: .25;
+        }
+
+        .slider_1 .slick-prev:before,
+        .slider_1 .slick-next:before
+        {
+            font-family: 'slick';
+            font-size: 30px;
+            line-height: 1;
+
+            opacity: 1;
+            color: black;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slider_1 .slick-prev
+        {
+            z-index: 2;
+            left: 35%;
+        }
+        [dir='rtl'] .slider_1 .slick-prev
+        {
+            z-index: 2;
+            right: 35%;
+            left: auto;
+        }
+        .slider_1 .slick-prev:before
+        {
+            content: '<';
+        }
+        [dir='rtl'] .slider_1 .slick-prev:before
+        {
+            content: '<';
+        }
+
+        .slider_1 .slick-next
+        {
+            right: 35%;
+        }
+        [dir='rtl'] .slider_1 .slick-next
+        {
+            right: auto;
+            left: 35%;
+        }
+        .slider_1 .slick-next:before
+        {
+            content: '>';
+        }
+        [dir='rtl'] .slider_1 .slick-next:before
+        {
+            content: '>';
+        }
+        /* slider_2 Arrows */
+        .slider_2 .slick-prev,
+        .slider_2 .slick-next
+        {
+            font-size: 0;
+            line-height: 0;
+
+            position: absolute;
+            top: 104%;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            -webkit-transform: translate(0, -104%);
+            -ms-transform: translate(0, -104%);
+            transform: translate(0, -104%);
+
+            cursor: pointer;
+
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        .slider_2 .slick-prev:hover,
+        .slider_2 .slick-prev:focus,
+        .slider_2 .slick-next:hover,
+        .slider_2 .slick-next:focus
+        {
+            color: transparent;
+            outline: none;
+            background: transparent;
+        }
+        .slider_2 .slick-prev:hover:before,
+        .slider_2 .slick-prev:focus:before,
+        .slider_2 .slick-next:hover:before,
+        .slider_2 .slick-next:focus:before
+        {
+            opacity: 1;
+        }
+        .slider_2 .slick-prev.slick-disabled:before,
+        .slider_2 .slick-next.slick-disabled:before
+        {
+            opacity: .25;
+        }
+
+        .slider_2 .slick-prev:before,
+        .slider_2 .slick-next:before
+        {
+            font-family: 'slick';
+            font-size: 40px;
+            line-height: 1;
+
+            opacity: 1;
+            color: black;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slider_2 .slick-prev
+        {
+            z-index: 2;
+            left: 40%;
+        }
+        [dir='rtl'] .slider_2 .slick-prev
+        {
+            z-index: 2;
+            right: 40%;
+            left: auto;
+        }
+        .slider_2 .slick-prev:before
+        {
+            content: '<';
+        }
+        [dir='rtl'] .slider_2 .slick-prev:before
+        {
+            content: '<';
+        }
+
+        .slider_2 .slick-next
+        {
+            right: 40%;
+        }
+        [dir='rtl'] .slider_2 .slick-next
+        {
+            right: auto;
+            left: 40%;
+        }
+        .slider_2 .slick-next:before
+        {
+            content: '>';
+        }
+        [dir='rtl'] .slider_2 .slick-next:before
+        {
+            content: '>';
+        }
+        /* slider_3 Arrows */
+        .slider_3 .slick-prev,
+        .slider_3 .slick-next
+        {
+            font-size: 0;
+            line-height: 0;
+
+            position: absolute;
+            top: -10%;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            -webkit-transform: translate(0, 10%);
+            -ms-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+
+            cursor: pointer;
+
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        .slider_3 .slick-prev:hover,
+        .slider_3 .slick-prev:focus,
+        .slider_3 .slick-next:hover,
+        .slider_3 .slick-next:focus
+        {
+            color: transparent;
+            outline: none;
+            background: transparent;
+        }
+        .slider_3 .slick-prev:hover:before,
+        .slider_3 .slick-prev:focus:before,
+        .slider_3 .slick-next:hover:before,
+        .slider_3 .slick-next:focus:before
+        {
+            opacity: 1;
+        }
+        .slider_3 .slick-prev.slick-disabled:before,
+        .slider_3 .slick-next.slick-disabled:before
+        {
+            opacity: .25;
+        }
+
+        .slider_3 .slick-prev:before,
+        .slider_3 .slick-next:before
+        {
+            font-family: 'slick';
+            font-size: 40px;
+            line-height: 1;
+
+            opacity: 1;
+            color: white;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slider_3 .slick-prev
+        {
+            z-index: 2;
+            left: 40%;
+        }
+        [dir='rtl'] .slider_3 .slick-prev
+        {
+            z-index: 2;
+            right: 40%;
+            left: auto;
+        }
+        .slider_3 .slick-prev:before
+        {
+            content: '<';
+        }
+        [dir='rtl'] .slider_3 .slick-prev:before
+        {
+            content: '<';
+        }
+
+        .slider_3 .slick-next
+        {
+            right: 40%;
+        }
+        [dir='rtl'] .slider_3 .slick-next
+        {
+            right: auto;
+            left: 40%;
+        }
+        .slider_3 .slick-next:before
+        {
+            content: '>';
+        }
+        [dir='rtl'] .slider_3 .slick-next:before
+        {
+            content: '>';
+        }
+        /* slider_5 Arrows */
+        .slider_5 .slick-prev,
+        .slider_5 .slick-next
+        {
+            font-size: 0;
+            line-height: 0;
+
+            position: absolute;
+            top: 50%;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+
+            cursor: pointer;
+
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        .slider_5 .slick-prev:hover,
+        .slider_5 .slick-prev:focus,
+        .slider_5 .slick-next:hover,
+        .slider_5 .slick-next:focus
+        {
+            color: transparent;
+            outline: none;
+            background: transparent;
+        }
+        .slider_5 .slick-prev:hover:before,
+        .slider_5 .slick-prev:focus:before,
+        .slider_5 .slick-next:hover:before,
+        .slider_5 .slick-next:focus:before
+        {
+            opacity: 1;
+        }
+        .slider_5 .slick-prev.slick-disabled:before,
+        .slider_5 .slick-next.slick-disabled:before
+        {
+            opacity: .25;
+        }
+
+        .slider_5 .slick-prev:before,
+        .slider_5 .slick-next:before
+        {
+            font-family: 'slick';
+            font-size: 40px;
+            line-height: 1;
+
+            opacity: 1;
+            color: white;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slider_5 .slick-prev
+        {
+            z-index: 2;
+            left: -10%;
+        }
+        [dir='rtl'] .slider_5 .slick-prev
+        {
+            z-index: 2;
+            right: -10%;
+            left: auto;
+        }
+        .slider_5 .slick-prev:before
+        {
+            content: '<';
+        }
+        [dir='rtl'] .slider_5 .slick-prev:before
+        {
+            content: '<';
+        }
+
+        .slider_5 .slick-next
+        {
+            right: -10%;
+        }
+        [dir='rtl'] .slider_5 .slick-next
+        {
+            right: auto;
+            left: -10%;
+        }
+        .slider_5 .slick-next:before
+        {
+            content: '>';
+        }
+        [dir='rtl'] .slider_5 .slick-next:before
+        {
+            content: '>';
+        }
+        /* slider_6 Arrows */
+        .slider_6 .slick-prev,
+        .slider_6 .slick-next
+        {
+            font-size: 0;
+            line-height: 0;
+
+            position: absolute;
+            top: -10%;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            -webkit-transform: translate(0, 10%);
+            -ms-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+
+            cursor: pointer;
+
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        .slider_6 .slick-prev:hover,
+        .slider_6 .slick-prev:focus,
+        .slider_6 .slick-next:hover,
+        .slider_6 .slick-next:focus
+        {
+            color: transparent;
+            outline: none;
+            background: transparent;
+        }
+        .slider_6 .slick-prev:hover:before,
+        .slider_6 .slick-prev:focus:before,
+        .slider_6 .slick-next:hover:before,
+        .slider_6 .slick-next:focus:before
+        {
+            opacity: 1;
+        }
+        .slider_6 .slick-prev.slick-disabled:before,
+        .slider_6 .slick-next.slick-disabled:before
+        {
+            opacity: .25;
+        }
+
+        .slider_6 .slick-prev:before,
+        .slider_6 .slick-next:before
+        {
+            font-family: 'slick';
+            font-size: 40px;
+            line-height: 1;
+
+            opacity: 1;
+            color: white;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slider_6 .slick-prev
+        {
+            z-index: 2;
+            left: 40%;
+        }
+        [dir='rtl'] .slider_6 .slick-prev
+        {
+            z-index: 2;
+            right: 40%;
+            left: auto;
+        }
+        .slider_6 .slick-prev:before
+        {
+            content: '<';
+        }
+        [dir='rtl'] .slider_6 .slick-prev:before
+        {
+            content: '<';
+        }
+
+        .slider_6 .slick-next
+        {
+            right: 40%;
+        }
+        [dir='rtl'] .slider_6 .slick-next
+        {
+            right: auto;
+            left: 40%;
+        }
+        .slider_6 .slick-next:before
+        {
+            content: '>';
+        }
+        [dir='rtl'] .slider_6 .slick-next:before
+        {
+            content: '>';
+        }
+    </style>
+    <div style="width: 100%; margin: 0 auto; font-family: 'Noto Sans KR'; font-size: 1.5em; background-color: #fae7be; color: white;">
+        <div style="width: 100%;">
+            <img src="../image/top.png" style="width: 100%;"/>
+        </div>
+        <div style="width: 100%; margin-top: 19px;">
+            <img src="../image/top_2.png" style="width: 100%;"/>
+        </div>
+        <div style="width: 100%;">
+            <img src="../image/top_3.png" style="width: 100%;"/>
+        </div>
+        <div style="width: 100%; display: flex; ">
+            <div style="width: 55%;">
+                <img src="../image/top_4.png" style="width: 100%;" />
+            </div>
+            <div class="slider_1" style="width: 45%; position: relative; right: 0.5em; top: -0.8em;">
+                <div class="image-list" style="text-align: center; width: 100%;">
+                    <div style="padding:10% 0 0 0; position: relative;">
+                        <iframe src="https://player.vimeo.com/video/477483221?autoplay=1&muted=1&loop=0&autopause=0&title=0&byline=1&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:211.25px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <img src="../image/slider_1_1.png" style="width: 100%; margin: 0 auto;"/>
+                    </div>
+                    <div>
+                        <img src="../image/slider_1_2.png" style="width: 100%; margin: 0 auto;"/>
+                    </div>
+                    <div>
+                        <img src="../image/slider_1_3.png" style="width: 100%; margin: 0 auto;"/>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div style="width: 100%;">
+            <img src="../image/dear_lovely.png" style="width: 100%;"/>
+        </div>
+        <!-- <div style="width: 100%; display: flex;">
+            <div class="slider_2" style="width: 570px; margin-top: 50px;">
+                <div class="image-list" style="text-align: center;">
+                    <div>
+                        <iframe src="https://player.vimeo.com/video/477484134?autoplay=1&muted=1&loop=0&autopause=0&title=0&byline=1&portrait=0" width="480" height="600" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <img src="../image/slider_2_1.png" style="margin: 0 auto;"/>
+                    </div>
+                    <div>
+                        <img src="../image/slider_2_2.png" style="margin: 0 auto;"/>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 540px;">
+                <img src="../image/top_5.png" />
+            </div>
+        </div>
+        <div style="width: 100%; margin-top: 116px;">
+            <img src="../image/top_6.png" style="width: 100%;"/>
+        </div>
+        <div style="width: 926px; margin: 0 auto; display: flex; height: 0; position: relative; top: -38em;">
+            <div style="width: 448px;">
+                <iframe src="https://player.vimeo.com/video/477483812?autoplay=1&muted=1&loop=0&autopause=0&title=0&byline=1&portrait=0" width="448" height="560" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div>
+                <div class="slider_3" style="width: 448px; margin-left: 30px;">
+                    <div class="image-list-2" style="text-align: center;">
+                        <div>
+                            <img src="../image/slider_3_1.png" style="margin: 0 auto;"/>
+                        </div>
+                        <div>
+                            <img src="../image/slider_3_2.png" style="margin: 0 auto;"/>
+                        </div>
+                        <div>
+                            <img src="../image/slider_3_3.png" style="margin: 0 auto;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;">
+            <img src="../image/youreamazing.png" style="width: 100%;"/>
+        </div>
+        <div style="width: 100%;">
+            <img src="../image/top_7.png" style="width: 100%;"/>
+        </div>
+        <div class="slider_5" style="height: 0; position: relative; top: -64em;">
+            <div class="image-list-2" style="width: 720px; margin: 0 auto;">
+                <div>
+                    <img src="../image/slider_5_1.png" style="margin: 0 auto;"/>
+                </div>
+                <div>
+                    <img src="../image/slider_5_2.png" style="margin: 0 auto;"/>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;">
+            <img src="../image/bottom.png" style="width: 100%;"/>
+        </div>
+        <div class="slider_6" style="height: 0; position: relative; top: -43em; right: -30em;">
+            <div class="image-list" style="width: 528px;">
+                <div>
+                    <iframe src="https://player.vimeo.com/video/477484017?autoplay=1&muted=1&loop=0&autopause=0&title=0&byline=1&portrait=0" width="528" height="660" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <img src="../image/slider_6_1.png" style="margin: 0 auto;"/>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script type="text/javascript" src="./JS/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.image-list').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 10000,
+            });
+        });
+
+        $(document).ready(function(){
+            $('.image-list-2').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+            });
+        });
+    </script>
+</body>
+</html>
